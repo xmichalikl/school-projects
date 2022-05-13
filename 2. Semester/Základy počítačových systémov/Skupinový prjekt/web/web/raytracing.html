@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<title>RAY TRACING</title>
+</head>
+<body>
+<header>
+	<div class="info-bar">
+		<p></p>
+	</div>
+	<nav>
+		<ul class="menu">
+			<li><a href="https://www.fiit.stuba.sk/"><img class="fiit_white" src="media/img/fiit_white.png" alt=""></a></li>
+			<li><a href="index.html">Úvod</a></li>
+			<li><a href="">Ray Tracing</a></li>
+			<li><a href="video.html">Video</a></li>
+			<li><a href="team.html">Team</a></li>
+			<li><a href="zdroje.html">Zdroje</a></li>
+		</ul>
+	</nav>
+</header>
+	<section>
+		<h1 class="title">Ray Tracing</h1>
+		<div class="raytracing">
+			<div class="block" >
+				<div class="raytracing_center">
+					<h3>Čo je Ray Tracing?</h3>
+					<p>Ray Tracing je v poslednej dobe často skloňovaný v súvislosti s budúcnosťou počítačovej grafiky, ale táto metóda sama o sebe nie je žiadnou novinkou. Samotný Ray Tracing je založený na princípe veľmi podobnému tomu, ako vnímame obraz sveta ľudským okom. Ray Tracing ako taký je len jednou z mnohých metód renderovania, ako je aj Ray Casting alebo Rasterizácia.<br><br></p>
+
+					<p>Sledovanie lúčov (z anglického Ray Tracing) je metóda renderovania (výpočtu a zobrazenie) 3D počítačovej grafiky. Presnejšie povedané je to metóda globálneho osvetlenia. Na rozdiel od bežného života, kedy sa lúče pohybujú od zdroja, odrážajú sa a lámu, až sa nakoniec stretnú s okom pozorovateľa, tu lúče vychádzajú z kamery. Ide totiž o techniku, s ktorou sú vytvárané špeciálne efekty v moderných filmoch, alebo rovno celé animované filmy. V poslednej dobe navyše začína byť Ray Tracing spájaný aj s počítačovou grafikou. Táto metóda teda nie je žiadnou novinkou, doteraz však bola nasadzovaná iba tam, kde bolo možné na výsledný render čakať dlhšiu dobu, čo je predovšetkým doména statických obrázkov alebo filmových efektov. Pre počítačovú grafiku je ale nutné, aby všetko prebiehalo v reálnom čase. V predošlých rokoch nebolo vôbec možné uvažovať nad tým, že by obyčajný počítač bol schopný podobnú úlohu zvládnuť. To sa však v súčasnosti mení.<br><br></p>
+
+					<p>História Ray Tracingu siaha niekoľko desiatok rokov späť, a ako už bolo spomenuté vyššie, bol primárne nasadzovaný do prostredia, ako je filmová postprodukcia, kde nemusí byť snímka pripravená do niekoľkých milisekúnd, ako je to pri počítačových hrách. Na poli herného priemyslu hovoríme vždy o tzv. "Real-time Ray Tracingu". Efekty, ktoré prispievajú k vysokej úrovni fotorealizmu v počítačových hrách, sú predovšetkým reflexie (odrazy svetla), refrakcie (lámanie svetla), depth-of-field alebo vysoko kvalitné tiene. Všetky tieto efekty poznáme aj zo súčasného typu Rasterizovaného renderovania, kde je ich simulovanie ďaleko ťažšie. Pre Ray Tracing sú tieto efekty do značnej miery prirodzené.</p>
+				</div>
+			</div>
+			<div class="block">
+				<div class="img_left" style="width: 30%;">
+					<img class="porovnanie" src="media/img/Ray_trace_diagram.png" alt="">
+				</div>
+				<div class="raytracing_right" style="width: 70%;">
+					<h3>Ako Ray Tracing funguje?</h3>
+					<p>Ray Tracing je založený na princípe fyzikálno-korektného obrazu založeného na lúčoch vychádzajúcich zo zdroja (kamera), kde je sledovaná dráha lúča a jeho interakcie s objektmi, ktoré majú v tejto virtuálnej scéne figurovať.<br><br></p>
+
+					<p>Metóda vychádza z pozorovania ľudským okom v bežnom živote, kedy sa lúče pohybujú od zdrojov svetla, odrážajú sa a lámu, až sa nakoniec stretnú s okom pozorovateľa. Tu však lúče vychádzajú z kamery, keďže zo zdrojov svetla vychádza nekonečné množstvo lúčov a nedalo by sa s nimi v rozumnom čase počítať. Po vyslaní lúča je sledovaná jeho dráha a interakcie s objektmi, ktoré majú v tejto virtuálnej scéne figurovať.<br><br></p>
+
+					<p>Každý lúč je vždy otestovaný na vznik prieniku s predmetom v danej scéne.  V bode tohto prieniku je určená úroveň osvetlenia a vlastnosti objektu, respektíve bodu (fyzikálne vlastnosti, ktoré ovplyvňujú do značnej miery reflexie, refrakcie a ďalšie efekty) a následne potom aj jeho výsledná farba. Ak je daný objekt (pixel) odrážajúci alebo priesvitný, je na dosiahnutie požadovanej efektu často potrebné kombinovať dáta niekoľkých takýchto lúčov.<br><br></p>
+
+					<a href="media/img/kod.png">>>> Pseudokód <<<</a><br><br>
+
+					<p>Mnoho ľudí si môže Ray Tracing spliesť s veľmi podobnou metódou nazývanou Ray Casting, ktorá je založená na podobnom princípe.</p>
+				</div>
+			</div>
+			<div class="block">
+				<div class="raytracing_left" style="width: 65%;">
+					<h3>Ray Casting a Rasterizácia</h3>
+					<p>Za predchodcu Ray Tracingu by sa dal považovať Ray Casting. Funguje na rovnakom princípe, ale na rozdiel od Ray Tracingu počíta s lúčom vyslaným z kamery iba do času, kedy vznikne priesečník medzi takto vyslaným lúčom a objektom. Potom spočítaná farba a informácie o nej sa vrátia späť. Táto metóda je výrazne rýchlejšia, ale neumožňuje ďalšie "kúzla" s obrazom ako refrakcie, reflexia alebo prirodzené tiene.<br><br></p>
+
+					<p>Druhou veľmi využívanou metódou, zvlášť pri počítačových hrách, je Rasterizácia. Rasterizácia je oproti Ray Tracingu naozaj rýchla a existuje veľa metód, ako tento typ renderovania ďalej zefektívniť. Základom pre stavbu zobrazovanej scény nie sú lúče, ale trojuholníky, kde u každého z nich je možné určiť plochu pokrytia a následne aj určiť farbu každého jednotlivého viditeľného pixelu. Súčasné grafické karty sú postavené tak, aby čo najefektívnejšie pracovali práve pri Rasterizácíi, kedy dokážu zároveň vykonať mnoho ďalších úkonov pre rýchlejšie a efektívnejšie spracovanie scény. Pri tomto type renderovania, je každý trojuholník vykreslovaný vždy nezávisle. Ray Tracing neustále využíva celú geometriu scény a je preto považovaný na rozdiel od Rasterizácie za "globálny rendering".<br><br></p>
+
+					<p>V reálnom svete sa lúče ako také odrážajú, sú pohlcované, alebo sa lámu, než sa dostanú do pozície, kde je umiestnené ľudské oko (v našom prípade vo virtuálnom svete kamera) sledujúce scénu. Na účely počítačovej grafiky by bol tento spôsob značne neefektívny, pretože by bolo veľmi ťažké, alebo nemožné určiť, ktoré z lúčov naozaj dorazia do bodu, kde sa nachádza oko alebo kamera.<br><br></p>
+
+					<p>Veľká časť výpočtov by tak bola vykonávaná úplne zbytočne. Ak by sme sa však ponorili do sveta spracovania 3D scény ešte hlbšie, narazíme na tzv. "Photon mapping", ktorý je založený práve na princípe výpočtu dráhy lúčov emitovaných zo svetelného zdroja a zároveň z pozície kamery scény.</p>
+				</div>
+				<div class="img_right" style="width: 35%;">
+					<img src="media/img/ray-tracing-cup.jpg" alt="">
+				</div>
+			</div>
+			<div class="block">
+				<div class="raytracing_right" style="width: 86%;">
+					<h3>Photon mapping</h3>
+					<p>Algoritmus ako taký bol vyvinutý za účelom reálneho globálneho osvetlenia (global illumination) 3D scény. Ide o tzv. "Dvoj-priechodový" algoritmus, kde sú počítané nielen lúče zo svetelného zdroja, ale tiež lúče vychádzajúce z pozície kamery. Ak je splnená podmienka a oba lúče sa prepoja, je určená tzv. "Hodnota žiarenia".<br><br></p>
+
+					<p>Tento typ renderovanie sa využíva typicky tam, kde je potrebné simulovať prechod svetla priesvitnými predmety (sklo, voda atď.). Hlavnou výhodou je tiež možnosť vzájomnej reflexie medzi osvetľovanými predmetmi, čo znamená, že svetlo po prechode priesvitným predmetom dokáže osvetliť ešte aj ďalší predmet (kaustika). Photon mapping je výrazne náročnejšou alternatívou Ray Tracingu. V súčasnej dobe nie je možné uvažovať o jeho nasadení v Real-Time renderovaní.<br><br></p>
+				</div>
+				<div class="img_left" style="width: 14%;">
+					<img src="media/img/photon-maping.png" alt="">
+				</div>
+			</div>
+			<div class="block">
+				<div class="raytracing_left" style="width: 55%;">
+					<h3>Reálny svet vs. Ray Tracing</h3>
+					<p>V reálnom svete je zdrojom svetla väčšinou slnko alebo iný zdroj "umelého" svetla a na povrch ľubovoľného predmetu dopadá nespočetné množstvo lúčov (môžeme o nich uvažovať ako o prúde fotónov smerujúcich do rovnakého bodu). V momente, keď sa do cesty lúča postaví nejaká prekážka, je v závislosti od jej povrchu časť lúčov odrazená, časť prejde a časť je absorbovaná.<br><br></p>
+
+					<p>Toto vysvetlenie je opäť veľmi zjednodušené, pretože sa veľmi často stáva, že povrch reflektuje lúče v mnohých rôznych smeroch a rovnako tak pri priechode môžu byť lúče vychýlené do mnohých rôznych smerov v závislosti od vnútornej štruktúry telesa. Výnimkou je neviditeľné svetlo vyšších vlnových dĺžok, ktoré sa za určitých podmienok môže konvertovať vo svetlo viditeľné. To spôsobuje jav zvaný "fluorescencie".<br><br></p>
+
+					<p>Ray Tracing môžeme brať ako výrazne zjednodušený (a obrátený) model reálneho fungovania zobrazovania v reálnom svete. Ak obmedzíme počet počítaných lúčov a počet ďalších reflexií a refrakcií, vznikne nám vo svojej podstate práve táto metóda. Ak sa pozrieme napríklad na obrázok obývačky vedľa, tak Ray Tracing ponúka viditeľné výhody, ktoré nám Rasterizácia môže len ťažko ponúknuť. Výsledné obrázky, vyrnederované pomocou Ray Tracingu sú takmer nerozoznateľné od reálnych fotografií. Ak sa pýtate, či je Ray Tracing skutočne staronovým nástupcom súčasného typu renderovania, tak budete pravdepodobne sklamaní. Odpoveď pravdepodobne nikto nepozná. Všetko závisí predovšetkým na ochote vývojárov a taktiež na prijateľnom výkone pre prevádzkovanie tzv. "Real-time Ray Tracingu".</p>
+				</div>
+				<div class="img_right" style="width: 45%;">
+					<img src="media/img/obyvacka.jpg" alt="">
+				</div>
+			</div>
+			<div class="block">
+				<div class="img_left" style="width: 35%;">
+					<img src="media/gif/rtx.gif" alt="">
+				</div>
+				<div class="raytracing_right" style="width: 65%;">
+					<p>Ďalej môžeme spomenúť príklady použitia Ray Tacingu vo filmoch. Snáď každý už videl aspoň jeden film z produkcie filmového štúdia Pixar. Ako príklady môžeme uviesť filmy Toy Story, Hľadá sa Nemo alebo Cars. Ak ako príklad zoberieme Toy Story z roku 1992, tak každý snímok trvalo vyrenderovať okolo 2 hodín. Pri filme Cars (Autá) 2006, aj napriek viac ako desaťročnému vekovému rozdielu, to trvalo 15 hodín. To všetko je spôsobené čoraz väčšou úrovňou detailov, ktoré chcú tvorcovia vo filme stvárniť.  Práve pri týchto dielach hral Ray Tracing kľúčovú úlohu. <br><br></p>
+
+					<p>Ray Tracing je technológia, ktorá sa v posledných mesiacoch začala hojne využívať aj v moderných hrách. Ide o štandard, vďaka ktorému jednotlivé tituly ponúknu reálnejšie a presnejšie vykresľovanie grafiky v hrách. Grafické karty rady RTX od spoločnosti Nvidia totiž dovoľujú vypočítať presné tiene, odrazy a lomy svetla podľa konkrétnych materiálov a samotnej scény. To dokáže posunúť vizuálny zážitok z hry na úplne iný level. <br><br></p>
+
+					<p>Tieto prednosti extrémne reálnej grafiky môžu využívať nielen herní vývojári, ale aj ďalší tvorcovia grafického obsahu. Podpora pre Ray Tracing bola totiž pridaná aj do profesionálnych grafických programov, ktoré pochádzajú z dielní spoločností Adobe, Autodesk, Blackmagic Design či napríklad Dassault Systèmes. <br><br></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>© 2020 Projekt ZPS 2020</p>
+		<p>Fakulta informatiky a informačných technológií v Bratislave</p>
+	</footer>
+	<script src="js/date_sk.js"></script>
+</body>
+</html>

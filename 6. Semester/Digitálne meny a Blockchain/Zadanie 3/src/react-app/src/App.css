@@ -1,0 +1,20 @@
+#main-container {
+    place-items: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+#reservation-form {
+    max-width: 330px;
+}
+
+#form-grid-date {
+    max-width: 100%;
+}
+
+#form-grid-time {
+    max-width: 100%;
+}
+
+#title {
+    max-width: 450px;
+}

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        Counter: <span id="counter">0</span><br />
+        <button id="btn">Count</button>
+    </body>
+    <script>
+        function makeCounterNice(counter) {
+            $.ajax({
+                url: 'http://localhost:3000/?counter='+counter,
+                dataType: "json",
+                success: function(data){
+                    document.getElementById('counter').innerHTML = '<span style="color: red">'+data.counter+'</span>';;
+                }
+            });
+        }
+
+        document.getElementById('btn').addEventListener('click',function(event){
+            $.ajax({
+                url: 'http://localhost:3000/',
+                dataType: "json",
+                success: function(data){
+                    makeCounterNice(data.counter);
+                }
+            })
+        });
+    </script>
+</html>

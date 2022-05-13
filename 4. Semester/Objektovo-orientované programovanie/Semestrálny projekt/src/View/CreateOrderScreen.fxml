@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CreateOrderController">
+   <bottom>
+      <Region prefHeight="20.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Region prefWidth="20.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <Region prefWidth="20.0" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <Label text="Nová objednávka" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="50.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="pcType" onAction="#switchSelectionPc" prefWidth="150.0" promptText="Zvoľ typ objednávky">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </ComboBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <ComboBox fx:id="pcPerformance" prefWidth="150.0" promptText="Zvoľ výkon PC" />
+                  <CheckBox fx:id="pcCleanup" mnemonicParsing="false" onAction="#switchSelectionCleanup" text="Prečistenie PC" />
+                  <CheckBox fx:id="pcBackup" mnemonicParsing="false" text="Záloha dát" />
+               </children>
+            </VBox>
+            <Button fx:id="createOrderButton" mnemonicParsing="false" onAction="#createOrder" text="Potvrdiť" />
+            <Button fx:id="switchToHomeButton" mnemonicParsing="false" onAction="#switchToHome" text="Zrušiť" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

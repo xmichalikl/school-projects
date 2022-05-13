@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World!</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </head>
+    <body style="background:#111111; color:greenyellow;">
+        <div class="container">
+            <div class="row header pt-1">
+                <h1>Hello World!</h1>
+            </div>
+            <div class="row confirmation pb-3">
+                <div class="col">
+                    <button class="btn btn-success" style="background:greenyellow; color:#111111;">Confirm</button>
+                </div>
+            </div>
+            <div class="row versionspt-1">
+                <div class="col">
+                    We are using Node.js <span id="node-version"></span>, Chromium <span  id="chrome-version"></span>, and Electron <span id="electron-version"></span>.
+                </div>
+            </div>
+            <div class="row lorem pt-1">
+                <div class="col"></div>
+            </div>
+            <div class="row confirmation pb-3">
+                <div class="col">
+                    <button class="btn btn-success" style="background:greenyellow; color:#111111;">Confirm</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            const ipcRenderer = require('electron').ipcRenderer;
+            const buttons = document.querySelectorAll('.confirmation button');
+            for(let i=0;i<buttons.length;i++) {
+                (function(button){
+                    button.addEventListener('click',e => {
+                        ipcRenderer.send('confirm', {arg1: 'a', arg2: 'b'});
+                    });
+                })(buttons[i]);
+            }
+        </script>
+    </body>
+</html>

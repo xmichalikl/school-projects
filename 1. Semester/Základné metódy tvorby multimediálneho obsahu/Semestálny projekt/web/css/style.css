@@ -1,0 +1,966 @@
+*{padding: 0; margin:0; box-sizing: border-box;}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+
+body{
+	font-family: 'Segoe UI Light';
+}
+
+
+
+
+
+.info-bar{
+	background: #222;	
+	color: #fff;
+	text-align: right;
+	padding: 5px 20px;
+	font-size: 12px;
+}
+
+
+
+
+
+nav{background: #fff;}
+
+
+
+
+
+.menu{
+	display: flex;
+	list-style: none;
+	border-bottom: 1px solid #ddd;
+}
+
+.menu li{
+	flex: 1;
+	text-align: center;
+	border-right: 1px solid #ddd; 
+	transition: background 0.3s;
+}
+
+.menu li:last-child {border-right: 0;}
+
+.menu li:hover {
+	background: rgba(0,0,0,0.10);
+}
+
+.menu a {
+	color: #222;
+	text-decoration: none;
+	font-size: 20px;
+	display: block;
+	padding: 20px 0;
+}
+
+
+
+
+
+.language {
+	text-align: right;
+	padding: 0px 20px;
+}
+
+.language a {
+	display: inline-block;
+	border: 1px solid #aaa;
+	padding: 1px 10px 2px;
+	color: #222;
+	text-decoration: none;
+	border-radius: 4px;
+	background: #fff;
+	margin-right: 2px;
+	font-size: 10px;
+	width: 35px;
+	text-align: center;
+	transition: background 0.3s;
+}
+
+.language a:last-child{margin-right: 0;}
+
+.language a:hover {
+	background: rgba(0,0,0,0.1);
+}
+
+
+
+
+
+section {
+	padding: 10px 40px;
+}
+
+
+
+
+
+.title {
+	text-transform: uppercase;
+	color: #222;
+}
+
+
+
+
+/*..........Uvod..........*/
+
+
+
+
+
+.logo {
+	width: 15%;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+
+
+
+
+.xandroidone {
+	width: 15%;
+	margin-top: 100px;
+}
+
+
+
+
+
+.uvod_left {
+	width: 60%;
+}
+
+.uvod_left h1 {
+	font-size: 70px;	
+	margin: 75px 0px 20px;
+	font-weight: normal;
+}
+
+.uvod_left h1 span{	
+	color: red;
+}
+
+.uvod_left h2 {
+	font-size: 35px;
+	font-weight: normal;
+}
+
+.uvod_left h3 {
+	font-size: 25px;
+	margin-bottom: 15px;
+	font-weight: normal;
+}
+
+
+
+
+
+.uvod_foto {
+  	width: 25%;
+  	position: absolute;
+  	bottom: 50px;
+  	right: 100px;
+}
+
+
+
+
+/*..........Specifikacie..........*/
+
+
+
+
+
+.specifikacie_left {
+	display: inline-block;
+	width: 325px;
+	margin-right: 20px;
+}
+
+
+
+
+
+.specifikacie_right {
+	display: inline-block;
+	vertical-align: top;
+	width: 360px;
+}
+.specifikacie_right h2{
+	font-size: 16px; 
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+
+
+
+
+.specifikacie_right2 {
+	display: inline-block;
+	vertical-align: top;
+	width: 360px;
+}
+.specifikacie_right2 h2{
+	font-size: 16px; 
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+
+
+
+
+.specifikacie_right3 {
+	display: inline-block;
+	vertical-align: top;
+	width: 360px;
+}
+.specifikacie_right3 h2{
+	font-size: 16px; 
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+
+
+
+
+.phone_sides {
+	width: 100%;
+	margin-top: 15px;
+}
+
+
+
+
+
+.tab1 {
+	margin-top: 15px;
+	border-collapse: collapse;
+	border: none;
+	font-size: 10px;
+	text-align: center;
+}
+
+.tab1 td {
+	width: 80px;
+	height: 65px;
+	border: none;
+	border-right: 1px solid #aaa;
+	padding: 0px 5px;
+}
+
+.tab1 td:last-child {
+	border-right: none;
+}
+
+.tab1 tr {
+	border-bottom: 1px solid #aaa;
+}
+
+.tab1 tr:last-child {
+	border-bottom: none;
+}
+
+
+
+
+
+.tab2 {
+	border-collapse: collapse;
+	font-size: 11px;
+	background: #fafafa;
+	margin-bottom: 10px;
+}
+
+.tab2 td {
+	border: 1px solid #aaa;
+	padding: 4px 10px;
+	border-left: none;
+	border-right: none;
+}
+
+.tab2 td:last-child {
+	width: 200px;
+	border-left: 1px solid #aaa;s
+}
+
+.tab2 td:first-child {
+	width: 150px;
+}
+
+
+
+
+
+.tab3 {
+	border-collapse: collapse;
+	font-size: 11px;
+	background: #fafafa;
+	margin-bottom: 10px;
+}
+
+.tab3 td {
+	border: 1px solid #aaa;
+	padding: 4px 10px;
+	border-left: none;
+	border-right: none;
+}
+
+.tab3 td:last-child {
+	width: 200px;
+	border-left: 1px solid #aaa;s
+}
+
+.tab3 td:first-child {
+	width: 150px;
+}
+
+
+
+
+
+.tab4 {
+	border-collapse: collapse;
+	font-size: 11px;
+	background: #fafafa;
+	margin-bottom: 10px;
+}
+
+.tab4 td {
+	border: 1px solid #aaa;
+	padding: 4px 10px;
+	border-left: none;
+	border-right: none;
+}
+
+.tab4 td:last-child {
+	width: 200px;
+	border-left: 1px solid #aaa;s
+}
+
+.tab4 td:first-child {
+	width: 150px;
+}
+
+
+
+
+
+.tab5 {
+	border-collapse: collapse;
+	font-size: 11px;
+	background: #fafafa;
+	margin-bottom: 10px;
+}
+
+.tab5 td {
+	border: 1px solid #aaa;
+	padding: 4px 10px;
+	border-left: none;
+	border-right: none;
+}
+
+.tab5 td:last-child {
+	width: 200px;
+	border-left: 1px solid #aaa;s
+}
+
+.tab5 td:first-child {
+	width: 150px;
+}
+
+
+
+
+
+.tab6 {
+	border-collapse: collapse;
+	font-size: 11px;
+	background: #fafafa;
+	margin-bottom: 10px;
+}
+
+.tab6 td {
+	border: 1px solid #aaa;
+	padding: 4px 10px;
+	border-left: none;
+	border-right: none;
+}
+
+.tab6 td:last-child {
+	width: 200px;
+	border-left: 1px solid #aaa;s
+}
+
+.tab6 td:first-child {
+	width: 150px;
+}
+
+
+
+
+
+.tab7 {
+	border-collapse: collapse;
+	font-size: 11px;
+	background: #fafafa;
+	margin-bottom: 10px;
+}
+
+.tab7 td {
+	border: 1px solid #aaa;
+	padding: 4px 10px;
+	border-left: none;
+	border-right: none;
+}
+
+.tab7 td:last-child {
+	width: 200px;
+	border-left: 1px solid #aaa;
+}
+
+.tab7 td:first-child {
+	width: 150px;
+}
+
+
+
+
+/*..........Recenzia..........*/
+
+
+
+
+
+.hodnotenie_a_cena {
+	float: left;
+	width: 15%;
+}
+
+
+
+
+
+.recenzia_foto {
+	width: 75%;
+	margin-top: 10px;
+}
+
+
+
+
+
+.hodnotenie_a_cena h1 {
+	font-size: 18px;
+	margin-top: 10px;
+	padding-bottom: 5px;
+}
+
+
+
+
+
+.hodnotenie_foto {
+	width: 45%;
+}
+
+
+
+
+
+.hodnotenie_a_cena h2 {
+	font-size: 16px;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+
+.hodnotenie_a_cena h3 {
+	font-size: 16px;
+	margin-top: 10px;
+	text-transform: uppercase;		
+}
+
+
+
+
+
+.recenzia_tab {
+	float: left;
+	width: 80%;
+	height: 525px;
+	border-collapse: collapse;
+}
+
+.recenzia_tab td {
+	font-size: 14px;
+	padding: 10px 15px;
+	width: 33%;
+	text-align: justify;
+	vertical-align: top;
+	border-right: 1px solid #aaa;
+}
+
+
+.recenzia_tab td:last-child {
+	border-right: none;
+}
+
+.recenzia_tab tr {
+	border-bottom: 1px solid #aaa;
+}
+
+.recenzia_tab tr:last-child {
+	border-bottom: none;
+}
+
+.recenzia_tab h1 {
+	font-size: 20px;
+	padding-bottom: 5px;
+}
+
+
+
+
+/*..........Fotky..........*/
+
+
+
+
+
+.gallery {
+	padding: 0px 0px;
+}
+
+.gallery img {
+	transition: 1s;
+	padding: 15px;
+	width: 200px;
+	height: 200px;
+	object-fit: contain;
+}
+
+.gallery img:hover {
+	filter: grayscale(100%);
+	transform: scale(1.1);
+}
+
+.gallery h2 {
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+
+
+
+/*..........Porovnanie..........*/
+
+
+
+
+
+.porovnanie_foto {
+	display: inline-block;
+	padding-top: 15px;
+	padding-right: 30px;
+}
+
+.porovnanie_foto h2 {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+.porovnanie_xiaomi_foto {
+	width: 150px;
+	margin-bottom: 20px;
+}
+
+.porovnanie_huawei_foto {
+	width: 145px;
+	margin-right: 5px;
+}
+
+.porovnanie {
+	display: inline-block;
+	vertical-align: top;
+	width: 360px;
+	margin-top: 5px;
+}
+.porovnanie h2{
+	font-size: 20px; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+
+
+.xiaomi_tab {
+	border-collapse: collapse;
+	font-size: 10px;
+	background: #fafafa;
+}
+
+.xiaomi_tab td {
+	border: 1px solid #aaa;
+	padding: 3px 10px;
+	border-left: none;
+	border-right: none;
+}
+
+.xiaomi_tab td:last-child {
+	width: 200px;
+	border-left: 1px solid #aaa;s
+}
+
+.xiaomi_tab td:first-child {
+	width: 150px;
+}
+
+
+
+
+
+.huawei_tab {
+	border-collapse: collapse;
+	font-size: 10px;
+	background: #fafafa;
+}
+
+.huawei_tab td {
+	border: 1px solid #aaa;
+	padding: 3px 10px;
+	border-left: none;
+	border-right: none;
+}
+
+.huawei_tab td:last-child {
+	width: 200px;
+	border-left: 1px solid #aaa;s
+}
+
+.huawei_tab td:first-child {
+	width: 150px;
+}
+
+
+
+
+
+.kratka_recenzia {
+	display: inline-block;
+	vertical-align: top;
+	text-align: justify;
+	width: 500px;
+	font-size: 14px;
+	padding-top: 50px;
+	padding-left: 30px;
+}
+
+.kratka_recenzia p {
+	height: 200px;
+}
+
+
+
+
+
+.plusy_minusy {
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 15px;
+	padding-left: 50px;
+	font-size: 20px;
+}
+
+.plusy_minusy h2 {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+
+
+
+
+.plusy_minusy table {
+	border-collapse: collapse;
+	height: 200px;
+	font-size: 18px;
+}
+
+.plusy_minusy table td {
+	width: 165px;
+	padding-left: 20px;
+	border-right: 1px solid #aaa;
+	
+}
+
+.plusy_minusy table td:last-child {
+	border-right: none;
+}
+
+.plusy_minusy table td:first-child::first-letter {
+	font-weight: bold;
+	color: green;
+}
+
+.plusy_minusy table td:last-child::first-letter {
+	font-weight: bold;
+	color: red;
+}
+
+
+.telefon_porovnanie:not(:last-child) {
+	border-bottom: 1px solid #aaa;
+}
+
+
+
+
+/*..........Zvuky..........*/
+
+
+
+
+
+.zvonenia {
+	display: inline-block;
+	margin: 15px 30px 0px;
+}
+
+.zvonenia h2 {
+	font-size: 20px;
+}
+
+
+
+
+
+.zoznam {
+	margin-top: 10px;
+	margin-left: 15px;
+   	display: inline-block;
+   	column-count: 6;
+   	column-gap: 50px;
+}
+
+
+
+
+
+.ukazky {
+	margin-top: 15px;
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+}
+
+.ukazky h2 {
+	padding-top: 30px;
+	font-size: 20px;
+}
+
+.ukazky h2:first-child {
+	padding-top: 0px;
+}
+
+
+
+
+
+.audio {
+	height: 40px;
+	padding-top: 10px;
+}
+
+
+
+
+
+/*..........Videé..........*/
+
+
+
+
+
+video {
+	width: 200px;
+}
+
+
+
+
+
+/*..........Komentáre..........*/
+
+
+
+
+
+.novy_komentar {
+	display: block;	
+	margin-top: 15px;
+	width: 50%;
+	float: left;
+	border-right: 1px solid #aaa;
+	padding-right: 30px;
+}
+
+.novy_komentar h2 {
+	font-size: 20px;
+}
+
+
+
+
+
+.predosle_komentare {
+	display: block;
+	margin-top: 15px;
+	width: 50%;
+	float: left;
+	border-left: 1px solid #aaa;
+	position: relative;
+	left: -1px;
+	padding-left: 30px;
+
+}
+
+.predosle_komentare h2 {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+.predosly_komentar {
+	border: 1px solid #aaa;
+	font-size: 16px;
+	border-radius: 25px;
+	margin-bottom: 20px;
+}
+
+.predosly_komentar p {
+	padding: 5px 15px;
+} 
+
+
+
+
+
+form {
+	border: 1px solid #aaa;
+	padding: 20px;
+	margin-top: 20px;
+	border-radius: 25px;
+}
+
+form .row {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+form .row:after {
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+form .row:last-child {
+	margin-bottom: 0;
+}
+
+form .row > * { 
+	float: left; 
+}
+
+form input[type="checkbox"] {
+	float: left;
+	position: relative;
+	top: 6px;
+	margin-right: 10px;
+}
+
+label {
+	width: 80%;
+}
+
+input[type="submit"] {
+	width: 20%;
+	border-radius: 10px;
+	border: 1px solid #aaa;
+	background: #eee;
+	background: linear-gradient(#f9f9f9, #ddd);
+	padding: 5px 7px;
+	outline: 0;
+	cursor: pointer;
+}
+
+input[type="submit"]:active {
+	background: linear-gradient(#ddd, #f9f9f9);
+}
+
+textarea {
+	resize: none;
+}
+
+input, textarea {
+	padding: 3px 7px;
+}
+
+input[type="email"] {
+	float: right;
+}
+
+input[type="text"]:first-child {
+	margin-right: 10px;
+}
+
+
+
+
+/*..........Footer..........*/
+
+
+
+
+
+footer {
+	font-size: 12px;
+	display: table-row;
+	height: 0;
+	background: #222;
+	color: #fff;
+}
+
+footer p:first-child {
+	float: left;
+	padding: 8px 40px 10px;
+	padding-right: 0;
+}
+
+footer p:last-child {
+	float: right;
+	padding: 8px 40px 10px;
+	padding-left: 0;
+}
+
+footer a {
+	color: #fff;
+	text-decoration: none;
+}

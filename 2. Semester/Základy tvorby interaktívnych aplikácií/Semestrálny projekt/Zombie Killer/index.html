@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  
+  <style>
+    @font-face {
+      font-family: 'Road Rage';
+      src: url(assets/Road_Rage.otf);
+    }
+
+    * { padding: 0; margin: 0; }
+    
+    canvas { 
+      cursor: url('assets/crosshair-small.png'), auto;
+      border: 1px solid black; 
+      outline: 0;
+    }
+  </style>
+
+  <script src="utils/utils.js"></script>
+  <script src="objects/objects.js"></script>
+  <script src="objects.js"></script>
+  <script src="resourceManager.js"></script>
+  <script src="states.js"></script>
+  <script src="main.js"></script>
+
+  <title>ZOMBIE KILLER ULTRA</title>
+</head>
+<body>
+  <canvas id="canvas" tabindex="1" width="900" height="700" >No Canvas :(</canvas>
+
+  <script type="text/javascript">
+    const game = new Game();
+    game.start().then(() => console.log('done')).catch(err => console.error(err));
+  </script>
+</body>
+</html>

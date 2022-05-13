@@ -1,0 +1,386 @@
+* {
+	padding: 0; 
+	margin:0; 
+	box-sizing: border-box;
+}
+
+html {
+	zoom: 125%;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+
+body {
+	font-family: 'Segoe UI Light';
+}
+
+body {
+	font-family: 'Calibri';
+	background-image: url("../media/img/background.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: 1920px 1080px;
+}
+
+
+
+/*..........Info & Nav..........*/
+
+.info-bar {
+	background: #222;	
+	color: #fff;
+	text-align: right;
+	padding: 3px 20px;
+	font-size: 10px;
+	height: 20px;
+}
+
+nav {
+	background: #fff;
+	height: 45px;
+	-webkit-box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.75);
+}
+
+
+.menu{
+	display: flex;
+	list-style: none;
+	width: 100%;
+	/*float: right;*/
+	border-bottom: 1px solid #222;
+	height: 45px;	
+}
+
+.menu li{
+	flex: 1;
+	text-align: center;
+	border-right: 1px solid #222; 
+	transition: background 0.3s;
+	background: rgba(74,35,90,1.0);
+	background: rgba(45,6,66,1.0);
+}
+
+.menu li:last-child {
+	border-right: 0;
+}
+
+.menu li:hover {
+	background: rgba(91,44,111,1.0);
+	background: rgba(79,6,74,1.0);
+}
+
+.menu a:hover {
+	color: white;
+	transform: scale(1.1); 
+}
+
+.menu a {
+	width: 80%;
+	margin: auto;
+	color: #eee;
+	text-decoration: none;
+	font-size: 20px;
+	display: block;
+	padding: 8px 0;
+	font-family: 'Segoe UI';
+	transition: transform .5s;
+	/*text-transform: uppercase;*/
+}
+
+.menu img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 43%;
+}
+
+section {
+	padding: 35px 40px 0px 40px;
+	/*backdrop-filter: blur(5px);*/
+}
+
+.title {
+	text-transform: uppercase;
+	color: #5B2C6F;
+	color: #eee;
+	text-shadow: 0px 3px 10px #000000;
+}
+
+
+
+/*..........UVOD a RAYTRACING..........*/
+
+
+.raytracing {
+	margin: 20px 0px 30px 0px;
+	/*backdrop-filter: blur(5px);*/
+}
+
+.raytracing h3{
+	padding-bottom: 5px;
+	color: #5B2C6F;
+	color: #eee;
+	text-shadow: 0px 3px 10px #000000;
+}
+
+.raytracing p {
+	color: #eee;
+	text-shadow: 0px 3px 10px #000000;
+	font-size: 15px;
+}
+
+.block {
+	width: 100%;
+	display: inline-block;
+	/*padding-bottom: 20px;
+	padding-top: 20px;*/
+	margin-bottom: 20px;
+
+	border-bottom: 1px solid #555;
+	border-bottom: 0px solid #555;
+	/*-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	backdrop-filter: blur(5px);*/
+} 
+
+.block:first-child {
+	padding-top: 0px;
+
+}
+
+.block:last-child {
+	padding-bottom: 0px;
+	border-bottom: none;
+}
+
+.block a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #eee;
+	text-shadow: 0px 3px 10px #000000;
+}
+
+.block a:hover {
+	text-decoration: underline;
+	color: #B80096;
+}
+
+
+.raytracing_center {
+	display: block;
+	text-align: justify;
+	padding: 10px;
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	backdrop-filter: blur(5px);
+}
+
+.raytracing_left {
+	display: block;
+	width: 50%;
+	text-align: justify;
+	float: left;
+	padding: 10px;
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	backdrop-filter: blur(5px);
+}
+
+.raytracing_right {
+	display: block;
+	width: 50%;
+	text-align: justify;
+	float: right;
+	padding: 10px;
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	backdrop-filter: blur(5px);
+}
+
+.img_right {
+	display: block;
+	float: right;
+	width: 50%;
+	padding-left: 20px;
+}
+
+.img_right img {
+	/*padding-left: 20px;*/
+	/*border-left: 1px solid #222;*/
+	width: 100%;
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+}
+
+.img_left {
+	display: block;
+	float: left;
+	width: 50%;
+	padding-right: 20px;
+}
+
+.img_left img {
+	/*padding-right: 20px;*/
+	/*border-right: 1px solid #222;*/
+	width: 100%;
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+}
+
+
+
+/*..........VIDEO..........*/
+
+
+.video {
+	width: 854px; 
+	height: 480px;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 50px;
+  	-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+}
+
+
+/*..........TEAM..........*/
+
+
+.team {
+	/*padding-top: 75px;
+	padding-left: 125px;*/
+	width: 1220px;
+	margin: 50px 118px 0px 118px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+	backdrop-filter: blur(5px);
+}
+
+.team_info {
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+	/*height: 410px;*/
+	color: #eee;
+	text-shadow: 0px 3px 10px #000000;
+}
+
+.team_photos {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	width: 75%;
+}
+
+.team_info h3 {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.team_info h4 {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.team_info p {
+	text-align: center;
+}
+
+.team a {
+	color: #5B2C6F;
+	color: #B80096;
+	text-shadow: 0px 3px 10px #000000;
+	text-decoration: none;
+}
+
+
+
+/*..........ZDROJE..........*/
+
+
+
+.zoznam_zdrojov {
+	margin: 30px 25px 25px 25px;
+	font-size: 20px;
+}
+
+.zoznam_zdrojov h3 {
+	color: #eee;
+	text-shadow: 0px 3px 10px #000000;
+}
+
+.zoznam_zdrojov ul {
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.zoznam_zdrojov li {
+	color: #eee;
+	padding-bottom: 5px;
+}
+
+.zoznam_zdrojov li:last-child {
+	padding-bottom: none;
+}
+
+.zoznam_zdrojov a {
+	text-decoration: none;
+	color: #eee;
+	text-shadow: 0px 3px 10px #000000;
+}
+
+.zoznam_zdrojov a:hover {
+	text-decoration: underline;
+	color: #B80096;
+}
+
+
+
+/*..........Footer..........*/
+
+
+footer {
+	font-size: 12px;
+	display: table-row;
+	height: 0;
+	background: #222;
+	color: #fff;
+	-webkit-box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 10px rgba(0,0,0,0.75);
+}
+
+footer p:first-child {
+	float: left;
+	padding: 8px 40px 10px;
+	padding-right: 0;
+}
+
+footer p:last-child {
+	float: right;
+	padding: 8px 40px 10px;
+	padding-left: 0;
+}
+
+footer a {
+	color: #fff;
+	text-decoration: none;
+}

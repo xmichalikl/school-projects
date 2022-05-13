@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<title>RAY TRACING</title>
+</head>
+<body>
+<header>
+	<div class="info-bar">
+		<p></p>
+	</div>
+	<nav>
+		<ul class="menu">
+			<li><a href="https://www.fiit.stuba.sk/"><img class="fiit_white" src="media/img/fiit_white.png" alt=""></a></li>
+			<li><a href="">Úvod</a></li>
+			<li><a href="raytracing.html">Ray Tracing</a></li>
+			<li><a href="video.html">Video</a></li>
+			<li><a href="team.html">Team</a></li>
+			<li><a href="zdroje.html">Zdroje</a></li>
+		</ul>
+	</nav>
+</header>
+	<section>
+		<h1 class="title">Úvod</h1>
+		<div class="raytracing">
+			<div class="block">
+				<div class="raytracing_center">
+					<h3>Úvod do Ray Tracingu</h3>
+					<p>V počítačovej grafike je Ray Tracing reprezentovaný ako renderovacia technika na generovanie obrazu. Zjednodušene povedané, je to metóda, ktorú používa grafické jadro na prepočet toho, ako zdroje virtuálneho svetla ovplyvňujú rôzne predmety v prostredí. Program doslova sleduje (trace) lúče (ray) svetla, používajúc výpočty vytvorené fyzikmi, ktorí študujú to ako sa reálne svetlo chová. Táto technológia sa už veľmi dlho používa pri filmoch so špeciálnymi efektami vo vopred-vykreslených scénach (prerendered), aby vytvorila foto-realistickú scénu.<br><br>
+					Grafické jadrá ako Unreal alebo Unity používajú ray tracing na vytvorenie/vykreslenie (render) realistických svetelných efektov ako sú tiene, odrazy a oklúzie, bez potreby ich vykresľovania ako samostatný objekt. Hoci je táto metóda pomerne náročná na prepočet, vo veľa prípadoch môže byť oveľa efektívnejšia ako staršie metódy realistického nasvietenia, pretože sa používa len na vykresľovanie toho, čo kamera potrebuje vidieť. Špecifické svetelné efekty sa zobrazujú len na jednej dvojrozmernej rovine z hľadiska diváka (tam kde pozerá kamera) a nie v celom prostredí.<br><br>
+					Toto všetko je dosiahnuté neuveriteľne zložitou matematikou, či už sa jedná o zisťovanie aktuálneho správania sa virtuálneho svetla (jeho prepočet a vykreslenie) alebo koľko týchto efektov je viditeľných pre hráča/diváka v daný moment. <br><br>
+					Ray tracing technológia je o všeobecnom prístupe ku grafike ako takej, nie len ku špecifickej technike, aj keď bola neustále vylepšovaná. Môže byť použitá v pred-vykreslených scénach (pre-rendered (prestrihové scény)) ako to je napr. v Hollywoodskych filmoch alebo ju môžeme uvidieť niekde uprostred hry.</p>
+					<div class="video" style="width: 640px; height: 360px; display: inline-block; margin: 30px 0px 30px 45px;">
+						<iframe width="640" height="360" src="https://www.youtube.com/embed/jkhBlmKtEAk" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="video" style="width: 640px; height: 360px; display: inline-block; margin: 30px 0px 30px 45px;">
+						<iframe width="640" height="360" src="https://www.youtube.com/embed/J3ue35ago3Y" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>© 2020 Projekt ZPS 2020</p>
+		<p>Fakulta informatiky a informačných technológií v Bratislave</p>
+	</footer>
+	<script src="js/date_sk.js"></script>
+</body>
+</html>

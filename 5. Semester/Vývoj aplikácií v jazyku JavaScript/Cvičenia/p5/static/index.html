@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Title</title>
+        <script>
+            function conlog(msg) {
+                if(window.location.href.indexOf('debug')>=0) console.log(msg);
+            }
+
+            // poorMansQueryParser
+            // parses url with ?, & and key=value pairs
+            // @param url string after /
+            // @returns object, key is object[key] = value or {}
+            function poorMansQueryParser(url) {
+                var queryParams = null;
+                var queryParamsParts = [];
+                var queryObject = {};
+
+                if(url.indexOf('?') >=0 ) {
+                    queryParams = url.split('?')[1];
+                    conlog(queryParams);
+                    if(queryParams.indexOf('&')>=0) {
+                        queryParamsParts = queryParams.split('&');
+                    }
+                    else queryParamsParts = [queryParams];
+                    conlog(queryParamsParts);
+                    queryParamsParts.forEach(qp => {
+                        if(qp.indexOf('=') >= 0) {
+                            var qpParts = qp.split('=');
+                            queryObject[qpParts[0]] = qpParts[1];
+                        }
+                        else queryObject[qp] = true;
+                    });
+                    conlog(queryObject);
+                }
+                return queryObject;
+            }
+
+            var queryObject = poorMansQueryParser(window.location.href);
+        </script>
+    </head>
+    <body>
+        <h1>Body</h1>
+        <h3>Query param: {qp}</h3>
+        <button id="c">Click me</button>
+        <script>
+            /*const socket = new WebSocket('ws://localhost:3001');
+            socket.addEventListener('open',(ev)=>{
+                console.log(ev);
+            });
+            socket.addEventListener('message', (msg)=> {
+                var data = JSON.parse(msg.data);
+                console.log('Counter from server: '+data.counter);
+            });
+            */
+            document.getElementById('c').addEventListener('click',()=>{
+                if(typeof queryObject['login'] !== 'undefined') {
+                    fetch('/data?login='+queryObject['login']).then(data => data.json()).then(data => {
+                        console.log(data.counter);
+                    });
+                }
+                else if(document.cookie.indexOf('login')>=0) {
+                    var l = document.cookie.split(';')[0].split('=')[1];
+                    if(l.length >=0 ) {
+                        fetch('/data?login='+l).then(data => data.json()).then(data => {
+                            console.log(data.counter);
+                        });
+                    }
+                    else conlog('login in cookie is empty')
+                }
+                else conlog('login is not anywhere');
+                //socket.send('');
+            });
+        </script>
+    </body>
+</html>

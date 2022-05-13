@@ -1,0 +1,16 @@
+{
+  "name": "p4",
+  "version": "1.0.0",
+  "description": "veci k prednaske",
+  "main": "promise.js",
+  "scripts": {
+    "start": "node promise.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roman Bronis",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "dependencies": {
+    "express": "^4.17.1",
+    "is-odd": "^3.0.1"
+  }
+}

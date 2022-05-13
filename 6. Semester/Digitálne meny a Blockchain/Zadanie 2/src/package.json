@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "web3": "^1.7.3"
+  },
+  "devDependencies": {
+    "solidity-coverage": "^0.7.20"
+  }
+}
